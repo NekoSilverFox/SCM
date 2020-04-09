@@ -24,9 +24,11 @@ void rang(u16 time, u16 frequency)
 
 void main()
 {
+	u16 i;
+	u16 j;
 	while(1)
 	{
-		u16 i;
+
 		// LED = 0;	  
 		LED = 0xfe;	   // 1111 1110
 		for(i = 0; i < 7; i++)
@@ -44,6 +46,11 @@ void main()
 //		LED = 1;
 //		delay(30000);
 
-		rang(100, 50);
+		
+		for(j = 10; j < 400; j++)
+		{
+		  rang(10, j);
+		}
+		
 	}
 }
