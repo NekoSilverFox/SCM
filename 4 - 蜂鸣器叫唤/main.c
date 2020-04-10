@@ -47,9 +47,13 @@ void main()
 //		delay(30000);
 
 		
-		for(j = 10; j < 400; j++)
+		for(j = 10; j < 200; j++)
 		{
-		  rang(10, j);
+		  rang(5, j);
+		}
+		for(j = 200; j > 10; j--)
+		{
+			rang(5, j);
 		}
 		
 	}
