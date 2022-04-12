@@ -1,0 +1,129 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/10/2020  18:10:42  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+E:\KEIL\C51\BIN\BL51.EXE main.obj TO template RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  E:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  E:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  template (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0022H     UNIT         ?DT?MAIN
+            IDATA   002AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0084H     UNIT         ?PR?LEDDISPLAY?MAIN
+            CODE    0113H     0024H     UNIT         ?C_INITSEG
+            CODE    0137H     000BH     UNIT         ?PR?_DELAY?MAIN
+            CODE    0142H     0005H     UNIT         ?PR?MAIN?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   template (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?LEDDISPLAY?MAIN
+
+?PR?LEDDISPLAY?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  template (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/10/2020  18:10:42  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:0137H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  C:0142H         PUBLIC        main
+  C:008FH         PUBLIC        LEDDisplay
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00A0H.2       PUBLIC        LSA
+  B:00A0H.3       PUBLIC        LSB
+  B:00A0H.4       PUBLIC        LSC
+  D:00C8H         PUBLIC        T2CON
+  D:000AH         PUBLIC        smgduan
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        i
+  C:0137H         LINE#         12
+  C:0137H         LINE#         13
+  C:0137H         LINE#         14
+  C:0141H         LINE#         15
+  -------         ENDPROC       _DELAY
+  -------         PROC          LEDDISPLAY
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:008FH         LINE#         17
+  C:008FH         LINE#         18
+  C:008FH         LINE#         20
+  C:0094H         LINE#         21
+  C:0094H         LINE#         22
+  C:00BEH         LINE#         23
+  C:00BEH         LINE#         24
+  C:00C2H         LINE#         25
+  C:00CAH         LINE#         26
+  C:00CEH         LINE#         27
+  C:00D6H         LINE#         28
+  C:00DAH         LINE#         29
+  C:00E2H         LINE#         30
+  C:00E6H         LINE#         31
+  C:00ECH         LINE#         32
+  C:00ECH         LINE#         34
+  C:00F7H         LINE#         35
+  C:00FEH         LINE#         36
+  C:0101H         LINE#         38
+  C:0112H         LINE#         40
+  -------         ENDPROC       LEDDISPLAY
+  -------         PROC          MAIN
+  C:0142H         LINE#         42
+  C:0142H         LINE#         43
+  C:0142H         LINE#         44
+  C:0142H         LINE#         45
+  C:0142H         LINE#         46
+  C:0145H         LINE#         47
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/10/2020  18:10:42  PAGE 3
+
+
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=43.0 xdata=0 code=327
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
